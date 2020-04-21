@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Drew-Kimberly/permutations-api/issues"
   },
-  "homepage": "https://github.com/Drew-Kimberly/permutations-api#readme"
+  "homepage": "https://github.com/Drew-Kimberly/permutations-api#readme",
+  "dependencies": {
+    "@drewkimberly/permutations": "^2.0.0"
+  }
 }
