@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Drew-Kimberly/permutations-api#readme",
   "dependencies": {
     "@drewkimberly/permutations": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
   }
 }
