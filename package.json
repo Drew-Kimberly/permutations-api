@@ -1,0 +1,20 @@
+{
+  "name": "@drewkimberly/permutations-api",
+  "version": "1.0.0",
+  "description": "REST API for generating JSON object permutations using AWS Lambda",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drew-Kimberly/permutations-api.git"
+  },
+  "author": "Drew Kimberly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drew-Kimberly/permutations-api/issues"
+  },
+  "homepage": "https://github.com/Drew-Kimberly/permutations-api#readme"
+}
