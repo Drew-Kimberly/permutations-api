@@ -21,6 +21,7 @@
     "@drewkimberly/permutations": "^2.0.0"
   },
   "devDependencies": {
+    "@types/node": "^13.13.1",
     "typescript": "^3.8.3"
   }
 }
