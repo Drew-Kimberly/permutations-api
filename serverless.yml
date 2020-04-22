@@ -1,0 +1,27 @@
+service:
+  name: permutations-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: 'us-east-1'
+  apiGateway:
+    minimumCompressionSize: 1024 # Compress response when larger than 1024 bytes
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1 # https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/node-reusing-connections.html
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+plugins:
+  - serverless-webpack
+
+functions:
+  GetPermutations:
+    handler: src/permutations.handler
+    events:
+      - http:
+          method: get
+          path: permutations
