@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "e2f3c991-8803-4bf7-8bdb-59459bc7bc2c",
+		"name": "Permutations API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /permutations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pilot\": [\"Han Solo\", \"Lando Calrissian\"],\n    \"copilot\": [\"Chewbacca\", \"Rey\"],\n    \"droids\": [\"r2d2\", \"bb-8\"],\n    \"ship\": \"Falcon\",\n    \"speed\": \"1.5c\",\n    \"crashes\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ld5313ibp5.execute-api.us-east-1.amazonaws.com/dev/permutations",
+					"protocol": "https",
+					"host": [
+						"ld5313ibp5",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"permutations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
