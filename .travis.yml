@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "stable"
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    - recipients:
+        - andrew.e.kimberly@gmail.com
+
+jobs:
+  include:
+
+    - stage: test
+      script:
+        - npm run check
+
+    - stage: deploy
+      if: branch = master
+      script:
+        - echo "Deploying to AWS using Serverless Framework..."
+        - npm i -g serverless
+        - sls deploy -v
