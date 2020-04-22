@@ -10,7 +10,7 @@ export const handler: APIGatewayProxyHandler = async (event, _context) => {
     const permutations = getPermutations(permutable);
     response = getResponse(200, serialize(permutations));
   } catch(e) {
-    response = getErrorResponse(400, serialize(e));
+    response = getErrorResponse(400, e);
   }
 
   return response;
