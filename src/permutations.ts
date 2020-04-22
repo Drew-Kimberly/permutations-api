@@ -2,16 +2,25 @@ import { APIGatewayProxyHandler } from 'aws-lambda';
 import 'source-map-support/register';
 import {getPermutations} from '@drewkimberly/permutations';
 
-export const handler: APIGatewayProxyHandler = async (_event, _context) => {
-  const obj = {
-    pilot: ["Han Solo", "Lando Calrissian"],
-    copilot: ["Chewbacca", "Rey"],
-    ship: "Falcon",
-    speed: "1.5c"
-  };
+export const handler: APIGatewayProxyHandler = async (event, _context) => {
+  const permutable = JSON.parse(event.body);
+  let response;
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify(getPermutations(obj), null, 2),
-  };
+  try {
+    const permutations = getPermutations(permutable);
+    response = getResponse(200, serialize(permutations));
+  } catch(e) {
+    response = getErrorResponse(400, serialize(e));
+  }
+
+  return response;
 };
+
+const serialize = (obj) => JSON.stringify(obj, null, 2);
+
+const getResponse = (code: number, responseBody: string) => ({statusCode: code, body: responseBody});
+
+const getErrorResponse = (code: number, errorResponseBody: string) => ({
+  ...getResponse(code, errorResponseBody),
+  headers: {'x-amzn-ErrorType': code}
+});

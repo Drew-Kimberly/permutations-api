@@ -23,5 +23,5 @@ functions:
     handler: src/permutations.handler
     events:
       - http:
-          method: get
+          method: post
           path: permutations
